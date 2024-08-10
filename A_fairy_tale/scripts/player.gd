@@ -4,7 +4,7 @@ const SPEED = 100.0
 var JUMP_VELOCITY = -200.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 980
 
 var power_up_number = 0
 
@@ -16,8 +16,11 @@ var jump_maximum = 1
 func power_up_modifier():
 	if power_up_number > 2:
 		jump_maximum = 10000
+		JUMP_VELOCITY = -200;
+		gravity = 600
 	elif power_up_number >1:
 		jump_maximum = 2
+		JUMP_VELOCITY = -320;
 	elif power_up_number > 0:
 		JUMP_VELOCITY = -320;
 	else: 

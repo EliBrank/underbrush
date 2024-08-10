@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16a14"]
 
 [node name="Next_Level" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_kd7sj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,3 +16,4 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Level_timer" to="." method="_on_level_timer_timeout"]

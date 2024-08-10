@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://yt1wnkqooi1"]
+[gd_scene load_steps=6 format=3 uid="uid://yt1wnkqooi1"]
+
+[ext_resource type="Texture2D" uid="uid://c3squc6oketap" path="res://assets/sprites/Second_sprite.png" id="1_rctrx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_88d64"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsjfg"]
+atlas = ExtResource("1_rctrx")
+region = Rect2(32, 20, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1t0ff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsjfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vktj"]
+size = Vector2(16, 6)
 
 [node name="Platform" type="AnimatableBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_88d64")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1t0ff")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_1vktj")
+one_way_collision = true

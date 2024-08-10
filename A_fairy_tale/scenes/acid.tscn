@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cposb07rqd5d5"]
+
+[ext_resource type="Texture2D" uid="uid://c3squc6oketap" path="res://assets/sprites/Second_sprite.png" id="1_rqdy5"]
+[ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="2_pcnnb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aggwu"]
+texture = ExtResource("1_rqdy5")
+0:3/animation_columns = 2
+0:3/animation_frame_0/duration = 0.5
+0:3/animation_frame_1/duration = 0.5
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oa4j2"]
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_aggwu")
+
+[node name="Acid" type="TileMap"]
+tile_set = SubResource("TileSet_oa4j2")
+format = 2
+
+[node name="killzone" parent="." instance=ExtResource("2_pcnnb")]

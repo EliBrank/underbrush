@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfrqf2wj0pw25"]
+
+[ext_resource type="PackedScene" uid="uid://doomvwt0bprp7" path="res://scenes/creep.tscn" id="1_nbwa1"]
+[ext_resource type="Script" path="res://scripts/creep_horiz.gd" id="2_y437t"]
+
+[node name="Creep_x" instance=ExtResource("1_nbwa1")]
+script = ExtResource("2_y437t")
+
+[node name="ray_cast_right" type="RayCast2D" parent="." index="2"]
+target_position = Vector2(12, 0)
+
+[node name="ray_cast_left" type="RayCast2D" parent="." index="3"]
+target_position = Vector2(-12, 0)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brd475c2v68da"]
+
+[ext_resource type="Script" path="res://Next_Level.gd" id="1_kd7sj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16a14"]
+
+[node name="Next_Level" type="Area2D"]
+script = ExtResource("1_kd7sj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_16a14")
+
+[node name="Level_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

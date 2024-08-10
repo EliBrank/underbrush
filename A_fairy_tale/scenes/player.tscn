@@ -36,8 +36,7 @@ height = 12.0
 
 [node name="player" type="CharacterBody2D"]
 z_index = 1
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
 script = ExtResource("1_fnx25")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -49,7 +48,3 @@ autoplay = "right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_fdtvh")
-
-[node name="Dash_timer" type="Timer" parent="."]
-
-[node name="Dash_cooldown" type="Timer" parent="."]

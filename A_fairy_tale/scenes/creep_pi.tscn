@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwttrfm7v6wo6"]
 
 [ext_resource type="PackedScene" uid="uid://doomvwt0bprp7" path="res://scenes/creep.tscn" id="1_4gk8y"]
-[ext_resource type="Script" path="res://Creep_pi.gd" id="2_g7dwf"]
+[ext_resource type="Script" path="res://scripts/Creep_pi.gd" id="2_g7dwf"]
 
 [node name="Creep_pi" instance=ExtResource("1_4gk8y")]
 script = ExtResource("2_g7dwf")

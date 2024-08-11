@@ -5,7 +5,7 @@ func _on_body_entered(body):
 	print("Level complete!")
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
-	timer.start()	
+	timer.start()
 
 func _on_level_timer_timeout():
 	print("timer ended. Reloading world:")

@@ -16,6 +16,7 @@ func _on_level_timer_timeout():
 	
 	if next_level != "":
 		get_tree().change_scene_to_file(next_level)
+		GlobalVariables.music_progress = 0.0
 	else:
 		print("no next scene set... reloading current level")
 		get_tree().reload_current_scene()

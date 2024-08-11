@@ -251,3 +251,5 @@ position = Vector2(379, -20)
 [node name="Next_Level" parent="." instance=ExtResource("6_o5ahd")]
 position = Vector2(591, 38)
 next_level = "res://scenes/levels/level_2.tscn"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

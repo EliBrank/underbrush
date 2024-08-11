@@ -381,3 +381,5 @@ shape = SubResource("RectangleShape2D_0nf0d")
 
 [node name="Next_Level" parent="." instance=ExtResource("8_i0l6q")]
 position = Vector2(-23, -1233)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

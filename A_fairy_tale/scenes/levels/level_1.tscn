@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cydsp7hubf5hr"]
+[gd_scene load_steps=11 format=3 uid="uid://cydsp7hubf5hr"]
 
+[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_pijkg"]
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_yysro"]
 [ext_resource type="Texture2D" uid="uid://bmnjml1dny1mp" path="res://assets/sprites/TileMap-Sheet.png" id="2_xfex1"]
 [ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="3_6e1f4"]
@@ -211,8 +212,10 @@ sources/0 = SubResource("TileSetAtlasSource_6y4x7")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kwpkj"]
 distance = -88.0
 
-[node name="Level 1" type="Node2D"]
+[node name="Level_1" type="Node2D"]
 position = Vector2(-22, 0)
+script = ExtResource("1_pijkg")
+metadata/level = 0
 
 [node name="player" parent="." instance=ExtResource("1_yysro")]
 z_index = 5
@@ -246,5 +249,5 @@ collision_mask = 2
 position = Vector2(379, -20)
 
 [node name="Next_Level" parent="." instance=ExtResource("6_o5ahd")]
-position = Vector2(-189, 13)
+position = Vector2(591, 38)
 next_level = "res://scenes/levels/level_2.tscn"

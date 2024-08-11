@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://rbst6prghh7b"]
+[gd_scene load_steps=13 format=3 uid="uid://rbst6prghh7b"]
 
+[ext_resource type="Script" path="res://scenes/levels/level_2.gd" id="1_iqgwm"]
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_kbekm"]
 [ext_resource type="Texture2D" uid="uid://b1qdg0xb6r0a8" path="res://assets/sprites/TileMap-Sheet_Grape.png" id="2_dbu6d"]
 [ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="3_fb8sf"]
@@ -225,8 +226,9 @@ distance = -88.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wstm5"]
 size = Vector2(162, 9.5)
 
-[node name="Level 2" type="Node2D"]
+[node name="Level_2" type="Node2D"]
 position = Vector2(-22, 0)
+script = ExtResource("1_iqgwm")
 
 [node name="player" parent="." instance=ExtResource("1_kbekm")]
 z_index = 0
@@ -252,10 +254,6 @@ shape = SubResource("WorldBoundaryShape2D_kwpkj")
 
 [node name="powerup" parent="powerup" instance=ExtResource("4_81jrs")]
 position = Vector2(-414, -360)
-collision_mask = 2
-
-[node name="powerup2" parent="powerup" instance=ExtResource("4_81jrs")]
-position = Vector2(-358, -123)
 collision_mask = 2
 
 [node name="Creeps" type="Node" parent="."]
@@ -295,5 +293,5 @@ position = Vector2(-318, 44)
 shape = SubResource("RectangleShape2D_wstm5")
 
 [node name="Next_Level" parent="." instance=ExtResource("7_qb81q")]
-position = Vector2(-294, -132)
+position = Vector2(894, 22)
 next_level = "res://scenes/levels/level_3.tscn"

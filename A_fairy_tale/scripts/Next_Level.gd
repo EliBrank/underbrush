@@ -8,6 +8,7 @@ func _on_body_entered(body):
 	print("Level complete!")
 	Engine.time_scale = 0.25
 	timer.start()
+	body.visible = false
 
 func _on_level_timer_timeout():
 	print("timer ended. Loading next level...")

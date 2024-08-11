@@ -5,15 +5,14 @@ var JUMP_VELOCITY = -200.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 980
-
-var power_up_number = 0
-
 var jumps_remaining = 1
 var jump_maximum = 1
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var sound_player_jump = $player_jump
 
 func power_up_modifier():
+	var power_up_number = GlobalVariables.power_up_number
 	if power_up_number > 2:
 		jump_maximum = 10000
 		JUMP_VELOCITY = -200;
@@ -37,6 +36,7 @@ func _physics_process(delta):
 		jumps_remaining = jump_maximum
 	if Input.is_action_just_pressed("jump") and jumps_remaining > 0:
 		velocity.y = JUMP_VELOCITY
+		sound_player_jump.play()
 		jumps_remaining -= 1 
 
 	# Get the input direction: -1, 0, 1

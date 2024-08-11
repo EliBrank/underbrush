@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkd54rcxmq5ih"]
+[gd_scene load_steps=18 format=3 uid="uid://bkd54rcxmq5ih"]
 
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_5ufa8"]
+[ext_resource type="Script" path="res://scenes/levels/level_3.gd" id="1_40dxu"]
 [ext_resource type="Texture2D" uid="uid://b85ob1ibo6skv" path="res://assets/sprites/TileMap-Sheet_RoseChocolate.png" id="2_woia0"]
 [ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="3_0assg"]
 [ext_resource type="PackedScene" uid="uid://dcbtpnt7qc272" path="res://scenes/power_up.tscn" id="4_1uttl"]
@@ -239,8 +240,9 @@ size = Vector2(194, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nf0d"]
 size = Vector2(114, 10)
 
-[node name="Level 3" type="Node2D"]
+[node name="Level_3" type="Node2D"]
 position = Vector2(-22, 0)
+script = ExtResource("1_40dxu")
 
 [node name="player" parent="." instance=ExtResource("1_5ufa8")]
 z_index = 0
@@ -263,14 +265,6 @@ position = Vector2(-143, 0)
 shape = SubResource("WorldBoundaryShape2D_kwpkj")
 
 [node name="powerup" type="Node" parent="."]
-
-[node name="powerup1" parent="powerup" instance=ExtResource("4_1uttl")]
-position = Vector2(-231, -74)
-collision_mask = 2
-
-[node name="powerup2" parent="powerup" instance=ExtResource("4_1uttl")]
-position = Vector2(-230, -74)
-collision_mask = 2
 
 [node name="powerup3" parent="powerup" instance=ExtResource("4_1uttl")]
 position = Vector2(514, -40)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcbtpnt7qc272"]
+[gd_scene load_steps=13 format=3 uid="uid://dcbtpnt7qc272"]
 
 [ext_resource type="Script" path="res://scripts/power_up.gd" id="2_bc8nf"]
 [ext_resource type="Texture2D" uid="uid://bmnjml1dny1mp" path="res://assets/sprites/TileMap-Sheet.png" id="2_gw8hr"]
+[ext_resource type="AudioStream" uid="uid://bob6w3fqgo2tj" path="res://assets/sounds/sfx/power_up.wav" id="3_xbygx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kg2bc"]
 atlas = ExtResource("2_gw8hr")
@@ -78,5 +79,10 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m134v")
+
+[node name="power_up" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xbygx")
+volume_db = -21.55
+pitch_scale = 1.7
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

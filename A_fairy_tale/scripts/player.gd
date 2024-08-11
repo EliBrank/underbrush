@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
+#Variables
 const SPEED = 100.0
 var JUMP_VELOCITY = -200.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 980
 var jumps_remaining = 1
 var jump_maximum = 1
@@ -11,6 +10,7 @@ var jump_maximum = 1
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var sound_player_jump = $player_jump
 
+# Handles power ups, refferencing Autoloader GlobalVariables
 func power_up_modifier():
 	var power_up_number = GlobalVariables.power_up_number
 	if power_up_number > 2:
@@ -25,13 +25,13 @@ func power_up_modifier():
 	else: 
 		pass
 
-
+# Main movement function
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
+	# Handles jump, altered by power up modifier
 	if is_on_floor():
 		jumps_remaining = jump_maximum
 	if Input.is_action_just_pressed("jump") and jumps_remaining > 0:
@@ -41,7 +41,6 @@ func _physics_process(delta):
 
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
-	
 	
 	# Flip sprite
 	if direction > 0:
@@ -57,8 +56,6 @@ func _physics_process(delta):
 			animated_sprite.play("run")
 	else:
 		animated_sprite.play("jump")
-
-	
 	
 	# Apply movement
 	if direction:

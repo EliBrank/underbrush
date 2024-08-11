@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://rbst6prghh7b"]
 
-[ext_resource type="Script" path="res://scenes/levels/level_2.gd" id="1_iqgwm"]
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_iqgwm"]
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_kbekm"]
 [ext_resource type="Texture2D" uid="uid://b1qdg0xb6r0a8" path="res://assets/sprites/TileMap-Sheet_Grape.png" id="2_dbu6d"]
 [ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="3_fb8sf"]

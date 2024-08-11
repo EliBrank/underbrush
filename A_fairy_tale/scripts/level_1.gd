@@ -5,12 +5,18 @@ var is_playing = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalVariables.power_up_number = 2
-	GlobalVariables.music = load("res://assets/sounds/music/Arpeggiator.wav")
+	
+	# Sets inital power up number
+	GlobalVariables.power_up_number = 0
+	
+	# Sets initial music for level
+	GlobalVariables.music = load("res://assets/sounds/music/Smoke_and_twilight_v1.wav")
 	$AudioStreamPlayer2D.stream = GlobalVariables.music
 	$AudioStreamPlayer2D.play(GlobalVariables.music_progress)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# Controls music behavior - updates GlobalVariables Autoload with current 
+# playback position, updateable on death
 func _process(_delta):
 	if is_playing:
 		GlobalVariables.music_progress = $AudioStreamPlayer2D.get_playback_position()

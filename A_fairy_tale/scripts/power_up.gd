@@ -1,8 +1,11 @@
 extends Area2D
 
+#Variables
 signal collected
 @onready var sound_power_up = $power_up
 var collectable = true
+
+# Handles collection of power ups
 func _on_body_entered(_body):
 	if collectable == true:
 		emit_signal("collected")

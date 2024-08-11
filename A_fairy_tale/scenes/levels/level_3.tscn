@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bkd54rcxmq5ih"]
 
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_5ufa8"]
-[ext_resource type="Script" path="res://scenes/levels/level_3.gd" id="1_40dxu"]
+[ext_resource type="Script" path="res://scripts/level_3.gd" id="1_40dxu"]
 [ext_resource type="Texture2D" uid="uid://b85ob1ibo6skv" path="res://assets/sprites/TileMap-Sheet_RoseChocolate.png" id="2_woia0"]
 [ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="3_0assg"]
 [ext_resource type="PackedScene" uid="uid://dcbtpnt7qc272" path="res://scenes/power_up.tscn" id="4_1uttl"]

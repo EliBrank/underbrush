@@ -1,5 +1,7 @@
 extends Node2D
 
+#Determines if music is playing or not
+var is_playing = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,4 +12,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	GlobalVariables.music_progress = $AudioStreamPlayer2D.get_playback_position()
+	if is_playing:
+		GlobalVariables.music_progress = $AudioStreamPlayer2D.get_playback_position()
+	else:
+		GlobalVariables.music_progress = 0.0
+		$AudioStreamPlayer2D.play(GlobalVariables.music_progress)
+		is_playing = true
+
+func _on_audio_stream_player_2d_finished():
+	is_playing = false

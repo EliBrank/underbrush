@@ -7,7 +7,7 @@ extends Area2D
 # Called when character enters killzone
 func _on_body_entered(body):
 	print("you died!")
-	Engine.time_scale = 0.5
+	Engine.time_scale = 0.25
 	
 	# Deletes player object's collision
 	body.get_node("CollisionShape2D").queue_free()

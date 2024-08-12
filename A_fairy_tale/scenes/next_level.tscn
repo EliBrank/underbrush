@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Next_Level.gd" id="1_kd7sj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16a14"]
+size = Vector2(16, 46)
 
 [node name="Next_Level" type="Area2D"]
 collision_mask = 2

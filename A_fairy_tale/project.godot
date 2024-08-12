@@ -19,6 +19,16 @@ config/icon="res://icon.svg"
 
 GlobalVariables="*res://scripts/autoload/global_variables.gd"
 
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=720
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
 [input]
 
 jump={
@@ -49,4 +59,5 @@ dash={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.171471, 0.190587, 0.203334, 1)
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0980392, 0.101961, 0.0941176, 1)

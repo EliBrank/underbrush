@@ -1,17 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://bkd54rcxmq5ih"]
+[gd_scene load_steps=19 format=3 uid="uid://bkd54rcxmq5ih"]
 
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_5ufa8"]
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_40dxu"]
-[ext_resource type="Texture2D" uid="uid://b85ob1ibo6skv" path="res://assets/sprites/TileMap-Sheet_RoseChocolate.png" id="2_woia0"]
 [ext_resource type="PackedScene" uid="uid://bjqxmbhfmb25c" path="res://scenes/killzone.tscn" id="3_0assg"]
+[ext_resource type="PackedScene" uid="uid://ovbtysqngfrb" path="res://scenes/camera.tscn" id="3_41qj5"]
 [ext_resource type="PackedScene" uid="uid://dcbtpnt7qc272" path="res://scenes/power_up.tscn" id="4_1uttl"]
+[ext_resource type="Texture2D" uid="uid://bmnjml1dny1mp" path="res://assets/sprites/TileMap-Sheet.png" id="4_cr6jq"]
 [ext_resource type="PackedScene" uid="uid://dwttrfm7v6wo6" path="res://scenes/creep_pi.tscn" id="5_8fkpr"]
 [ext_resource type="PackedScene" uid="uid://bfrqf2wj0pw25" path="res://scenes/creep_x.tscn" id="6_vt7dv"]
 [ext_resource type="PackedScene" uid="uid://2hsl2npicarn" path="res://scenes/creep_y.tscn" id="7_cdqt2"]
 [ext_resource type="PackedScene" uid="uid://brd475c2v68da" path="res://scenes/next_level.tscn" id="8_i0l6q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16c4r"]
-texture = ExtResource("2_woia0")
+texture = ExtResource("4_cr6jq")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -40,6 +41,7 @@ texture = ExtResource("2_woia0")
 4:1/animation_frame_4/duration = 0.2
 4:1/animation_frame_5/duration = 0.2
 4:1/0 = 0
+4:1/0/z_index = 10
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
 0:2/0 = 0
@@ -217,6 +219,12 @@ texture = ExtResource("2_woia0")
 6:8/0 = 0
 6:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:8/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_srgnk"]
 physics_layer_0/collision_layer = 1
@@ -243,15 +251,13 @@ size = Vector2(114, 10)
 [node name="Level_3" type="Node2D"]
 position = Vector2(-22, 0)
 script = ExtResource("1_40dxu")
+replace_colors = [Color(0.101961, 0.0862745, 0.0745098, 1), Color(0.34902, 0.168627, 0.152941, 1), Color(0.6, 0.396078, 0.396078, 1), Color(0.941176, 0.866667, 0.929412, 1)]
 
 [node name="player" parent="." instance=ExtResource("1_5ufa8")]
-z_index = 0
+z_index = 5
 position = Vector2(-209, -71)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(4, 4)
-limit_bottom = 60
-position_smoothing_enabled = true
+[node name="Camera2D" parent="player" instance=ExtResource("3_41qj5")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_srgnk")
@@ -271,7 +277,7 @@ position = Vector2(514, -40)
 collision_mask = 2
 
 [node name="powerup4" parent="powerup" instance=ExtResource("4_1uttl")]
-position = Vector2(-45, -1230)
+position = Vector2(-46, -1239)
 collision_mask = 2
 
 [node name="Creeps" type="Node" parent="."]
@@ -380,6 +386,8 @@ position = Vector2(218, -661)
 shape = SubResource("RectangleShape2D_0nf0d")
 
 [node name="Next_Level" parent="." instance=ExtResource("8_i0l6q")]
-position = Vector2(-23, -1233)
+position = Vector2(-24, -1256)
+rotation = -1.57079
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+panning_strength = 0.0

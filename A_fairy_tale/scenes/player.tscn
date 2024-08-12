@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://r156qxrvjuae"]
+[gd_scene load_steps=14 format=3 uid="uid://r156qxrvjuae"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fnx25"]
 [ext_resource type="Texture2D" uid="uid://bmnjml1dny1mp" path="res://assets/sprites/TileMap-Sheet.png" id="2_png5j"]
@@ -7,10 +7,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqpw8"]
 atlas = ExtResource("2_png5j")
 region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1mdn"]
-atlas = ExtResource("2_png5j")
-region = Rect2(144, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvk68"]
 atlas = ExtResource("2_png5j")
@@ -45,13 +41,10 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jqpw8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1mdn")
 }],
 "loop": true,
 "name": &"damage",
-"speed": 20.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -77,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nfqy3")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_3vuuh")
 }],
 "loop": false,
@@ -96,9 +89,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdtvh"]
-radius = 3.0
-height = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_581ok"]
+size = Vector2(5, 13)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 1
@@ -106,15 +98,15 @@ position = Vector2(-2, -4)
 collision_layer = 2
 script = ExtResource("1_fnx25")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["sprites_to_update"]]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_t1tr7")
-animation = &"idle"
+animation = &"damage"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -2)
-shape = SubResource("CapsuleShape2D_fdtvh")
+position = Vector2(2.5, -2.5)
+shape = SubResource("RectangleShape2D_581ok")
 
 [node name="player_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_bjmrq")

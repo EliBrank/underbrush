@@ -1,4 +1,7 @@
-extends Node2D
+extends Node
+
+# define palette for re-color palette shader
+@export var replace_colors: Array
 
 #Determines if music is playing or not
 var is_playing = true
@@ -13,7 +16,8 @@ func _ready():
 	GlobalVariables.music = load("res://assets/sounds/music/Smoke_and_twilight_v1.wav")
 	$AudioStreamPlayer2D.stream = GlobalVariables.music
 	$AudioStreamPlayer2D.play(GlobalVariables.music_progress)
-
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # Controls music behavior - updates GlobalVariables Autoload with current 
 # playback position, updateable on death

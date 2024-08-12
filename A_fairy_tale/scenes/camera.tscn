@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ovbtysqngfrb"]
+
+[ext_resource type="Material" uid="uid://ujlx8iq4i7yo" path="res://assets/ShaderMaterial.tres" id="1_bgflg"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_medot"]
+
+[node name="Camera2D" type="Camera2D"]
+zoom = Vector2(4, 4)
+limit_bottom = 60
+position_smoothing_enabled = true
+script = ExtResource("1_medot")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("1_bgflg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

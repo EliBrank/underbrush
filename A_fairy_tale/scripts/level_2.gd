@@ -1,5 +1,8 @@
 extends Node2D
 
+# define palette for re-color palette shader
+@export var replace_colors: Array
+
 #Determines if music is playing or not
 var is_playing = true
 

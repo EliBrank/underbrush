@@ -40,7 +40,7 @@ func animate_labels():
 		label.text = ""  # Clear text before animation
 		print("Label content after clearing for animation:", label.text)
 
-		# Animate text letter by letter
+		# animate text letter by letter
 		for i in range(full_text.length()):
 			label.text += full_text[i]
 			print("Label content during animation:", label.text)
@@ -70,3 +70,5 @@ func num_secret_text():
 			return "2! so close!"
 		3:
 			return "all 3! great job!"
+		_:
+			return "...some of them?"

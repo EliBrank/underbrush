@@ -389,6 +389,7 @@ shape = SubResource("RectangleShape2D_0nf0d")
 [node name="Next_Level" parent="." instance=ExtResource("8_i0l6q")]
 position = Vector2(-24, -1256)
 rotation = -1.57079
+next_level = "res://scenes/ui/end_screen.tscn"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 panning_strength = 0.0

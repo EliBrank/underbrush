@@ -7,7 +7,7 @@
 script = ExtResource("2_rbnnu")
 
 [node name="ray_cast_up" type="RayCast2D" parent="." index="2"]
-target_position = Vector2(0, -12)
+target_position = Vector2(0, -7)
 
 [node name="ray_cast_down" type="RayCast2D" parent="." index="3"]
 target_position = Vector2(0, 9)

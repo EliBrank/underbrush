@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgsha2bipeecv"]
+
+[ext_resource type="FontFile" uid="uid://ecdtykg3sy6h" path="res://assets/fonts/Early GameBoy.ttf" id="1_6uy0f"]
+[ext_resource type="Script" path="res://scripts/EndScreen.gd" id="2_ys2jt"]
+
+[sub_resource type="Theme" id="Theme_vlsrx"]
+default_font = ExtResource("1_6uy0f")
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vlsrx")
+script = ExtResource("2_ys2jt")
+next_level = "res://scenes/ui/StartMenu.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0823529, 0.0941176, 0.101961, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label1" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.94902, 0.94902, 0.862745, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.94902, 0.94902, 0.862745, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1

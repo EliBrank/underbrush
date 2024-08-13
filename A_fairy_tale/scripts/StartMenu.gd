@@ -6,8 +6,8 @@ var current_selection: int = 0
 @export var start_position: Vector2
 @export var quit_position: Vector2
 
-# reference a
 @onready var cursor_sprite = $AnimatedCursor
+@onready var sound_select = $Select
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +21,7 @@ func _process(delta):
 		else:
 			current_selection = 0
 		update_cursor_position()
+		sound_select.play()
 	elif Input.is_action_just_pressed("ui_accept"):
 		select_option()
 

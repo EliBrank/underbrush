@@ -6,11 +6,8 @@
 [node name="Creep_x" instance=ExtResource("1_nbwa1")]
 script = ExtResource("2_y437t")
 
-[node name="AnimatedSprite2D" parent="." index="0"]
-animation = &"default"
-
 [node name="ray_cast_right" type="RayCast2D" parent="." index="2"]
-target_position = Vector2(12, 0)
+target_position = Vector2(9, 0)
 
 [node name="ray_cast_left" type="RayCast2D" parent="." index="3"]
-target_position = Vector2(-12, 0)
+target_position = Vector2(-9, 0)

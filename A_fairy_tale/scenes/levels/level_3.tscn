@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkd54rcxmq5ih"]
+[gd_scene load_steps=20 format=3 uid="uid://bkd54rcxmq5ih"]
 
 [ext_resource type="PackedScene" uid="uid://r156qxrvjuae" path="res://scenes/player.tscn" id="1_5ufa8"]
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_40dxu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bfrqf2wj0pw25" path="res://scenes/creep_x.tscn" id="6_vt7dv"]
 [ext_resource type="PackedScene" uid="uid://2hsl2npicarn" path="res://scenes/creep_y.tscn" id="7_cdqt2"]
 [ext_resource type="PackedScene" uid="uid://brd475c2v68da" path="res://scenes/next_level.tscn" id="8_i0l6q"]
+[ext_resource type="PackedScene" uid="uid://px7jtoesp5c8" path="res://scenes/secret.tscn" id="11_pw2dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16c4r"]
 texture = ExtResource("4_cr6jq")
@@ -391,3 +392,7 @@ rotation = -1.57079
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 panning_strength = 0.0
+
+[node name="secret" parent="." instance=ExtResource("11_pw2dh")]
+position = Vector2(-536, -282)
+collision_mask = 2

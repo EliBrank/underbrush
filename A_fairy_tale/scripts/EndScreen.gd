@@ -23,10 +23,8 @@ func _ready():
 	for label in labels:
 		label.text = ""
 	
-	print("Starting animation after delay")
 	await get_tree().create_timer(animation_delay).timeout
 	
-	print("Starting to animate labels")
 	await animate_labels()
 
 func animate_labels():
@@ -34,21 +32,14 @@ func animate_labels():
 		var label = labels[current_label_index]
 		var full_text = labels_full[current_label_index]
 		
-		print("Animating label", current_label_index + 1)
-		print("Full text of label before animation:", full_text)
-		
 		label.text = ""  # Clear text before animation
-		print("Label content after clearing for animation:", label.text)
 
 		# animate text letter by letter
 		for i in range(full_text.length()):
 			label.text += full_text[i]
-			print("Label content during animation:", label.text)
 			await get_tree().create_timer(letter_delay).timeout
 		
 		current_label_index += 1
-		
-		print("Finished animating label", current_label_index)
 		
 		await get_tree().create_timer(letter_delay).timeout
 		await animate_labels()

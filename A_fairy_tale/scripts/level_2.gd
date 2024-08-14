@@ -1,5 +1,7 @@
 extends Node2D
 
+var level_name = "level_2"
+
 # define palette for re-color palette shader
 @export var replace_colors: Array
 

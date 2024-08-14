@@ -15,6 +15,11 @@ func _ready():
 	
 	# initialize secret number to 0 when starting from menu
 	GlobalVariables.secret_number = 0
+	
+	for collected_status in GlobalVariables.collected_secrets:
+		GlobalVariables.collected_secrets[collected_status] = false
+		
+	print(GlobalVariables.collected_secrets)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

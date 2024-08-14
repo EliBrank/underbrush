@@ -23,6 +23,7 @@ GlobalVariables="*res://scripts/autoload/global_variables.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=720
+window/size/resizable=false
 
 [filesystem]
 

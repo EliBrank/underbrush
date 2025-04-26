@@ -15,7 +15,7 @@ Hi, I'm Elias Brinkman, a creative developer and visual designer with a passion 
 
 **Underbrush** is a lovingly crafted 2D platformer created in just under a week using the [Godot Engine](https://godotengine.org/) for Atlas’ second trimester hack sprint.
 
-We set out to make a *small* game that felt *complete* and *polished*. With the theme revealed as _"environmentalism"_, our concept quickly took root: a FernGully-inspired tale of a fairy navigating a forest twisted by human exploitation.
+We set out to make a *small* game that felt *complete* and *polished*. With the theme revealed as _"fairytales"_, our concept quickly took root: a FernGully-inspired tale of a fairy navigating a forest twisted by human exploitation.
 
 What started as “platformers are easy to make” quickly turned into a deep dive into unfamiliar tools, creative visual solutions, and fast-paced decision making.
 

@@ -37,7 +37,7 @@ What started as “platformers are easy to make” quickly turned into a deep di
 
 - **Engine**: [Godot](https://godotengine.org/) using GDScript
 - **Art**: [Aseprite](https://www.aseprite.org/)
-- **Audio**: [Bosca Ceoil](https://boscaceoil.net/) and [JSFXR](https://sfxr.me/)
+- **Audio**: [Bosca Ceoil](https://yurisizov.itch.io/boscaceoil-blue) and [JSFXR](https://sfxr.me/)
 - **Team Management**: [Trello](https://trello.com/) for MVP → stretch goals planning
 
 We split our time between learning the software and designing the game. I created all visual elements, tilemaps, and UI assets, while also co-developing core game mechanics, implementing shader logic for palette swapping, and designing levels.
